@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Product Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background-color: #f3f3f3;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background-color: white;
+      height: 550px;
+      width: 340px;
+      padding: 15px;
+      border: 4px solid rgba(255, 0, 0, 0.3);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image img {
+      height: 320px;
+      width: 320px;
+      border-radius: 10px;
+    }
+
+    h4 {
+      margin-top: 1.5rem;
+      font-size: 18px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    span {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 16px;
+      font-weight: bold;
+      color: #e63946;
+    }
+
+    p {
+      font-weight: 400;
+      margin-top: 1rem;
+      color: #555;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="image">
+        <img src="images/product_1.avif" alt="Phone Case">
+      </div>
+      <h4>Stylish Phone Case 📱</h4>
+      <span>₹499</span>
+      <p>Keep your phone safe and stylish with this premium protective case — designed for comfort, grip, and elegance.</p>
+    </div>
+  </div>
+</body>
+</html>
