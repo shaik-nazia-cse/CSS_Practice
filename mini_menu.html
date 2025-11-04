@@ -2,27 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café Menu</title>
+    <link rel="stylesheet" href="style.css" />
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
         }
 
         body {
-            font-family: sans-serif;
             overflow-x: hidden;
+            color: #fff;
         }
-
-        .container {
-            position: relative;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
         video {
             position: fixed;
             top: 0;
@@ -33,94 +28,177 @@
             z-index: -2;
         }
 
-
         .overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
 
-
         .navbar {
-            background: rgba(0, 0, 0, 0.5);
-            height: 60px;
+            height: 65px;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 3rem;
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 2;
+            z-index: 10;
+            /* background: rgba(0, 0, 0, 0.3); */
+            backdrop-filter: blur(4px);
         }
 
         .navbar span {
-            color: chocolate;
+            color:rgba(78, 22, 4, 0.93);
             font-weight: 800;
-            font-size: 1.5rem;
-            margin-left: 3rem;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
             gap: 2rem;
-            margin-right: 3rem;
         }
 
         .navbar a {
             text-decoration: none;
-            color: whitesmoke;
+            color: #fff;
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .navbar a:hover {
-            color: rgb(148, 28, 28);
+            color:rgba(78, 22, 4, 0.93);
+            transform: scale(1.1);
         }
 
-        .details {
-            background-color :transparent;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
+        .menu-section {
+            position: relative;
+            top: 60px;
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin: 60px 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        .menu-section h1 {
+            font-size: 36px;
+            color:rgba(78, 22, 4, 0.93);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            margin-bottom: 10px;
+        }
+
+        .menu-section p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 50px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            justify-items: center;
+        }
+
+        .menu-card {
+            background: rgba(78, 22, 4, 0.93);
             border-radius: 15px;
-            border: 2px solid rgb(193, 87, 12);
-            position: absolute;
-            left: 30%;
-            top: 50%;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeInUp 1s ease forwards;
         }
 
-        .details label {
-            font-size: 1.2rem;
-            color: rgb(232, 102, 10);
-            font-weight: 400;
+        .menu-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
         }
 
-        .details input::placeholder {
-            background-color: chocolate;
-            color:black;
-            font-style: italic;
-            font-size: 1rem;
-            margin-left: -20px;
-            padding: 12px 12px;
+        .menu-card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-bottom: 15px;
         }
-        
+
+        .menu-card h3 {
+            color:rgb(182, 108, 34);
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .menu-card p {
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .menu-card span {
+            display: inline-block;
+            background:rgba(151, 56, 24, 0.93);
+            color: rgb(182, 108, 34)5;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+    
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 20px;
+            }
+
+            .menu-section h1 {
+                font-size: 28px;
+            }
+
+            .menu-section p {
+                font-size: 16px;
+            }
+
+            .menu-card {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 
 <body>
-
     <div class="main">
         <div class="container">
-            <video src="images/HD_Coffee_Making_Video_Generation.mp4" autoplay muted loop></video>
+            <video src="images/Video_Generation_With_Added_Elements.mp4" autoplay muted loop></video>
             <div class="overlay"></div>
-            <div class="navbar">
+
+            <nav class="navbar">
                 <span>CAFE.</span>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -129,16 +207,38 @@
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Services</a></li>
                 </ul>
-            </div>
-            <div class="details">
-                <form action="">
-                    <label for="contact">conatct</label>
-                    <input type="number" id="contact" placeholder="Enter Your Number" required>
-                </form>
-            </div>
+            </nav>
+
+            <section class="menu-section">
+                <h1>Our Special Menu</h1>
+                <p>Freshly baked and brewed with love — taste happiness in every bite!</p>
+
+                <div class="menu-container">
+                    <div class="menu-card">
+                        <img src="images/choco lava.webp" alt="choco lava" />
+                        <h3>Choco Lava Cake</h3>
+                        <p>Warm, gooey chocolate cake with a molten center.</p>
+                        <span>₹120</span>
+                    </div>
+
+                    <div class="menu-card">
+                        <img src="images/chocolate-truffle-featured-image.webp" alt="milkshake" />
+                        <h3>Milk Shake</h3>
+                        <p>Thick, creamy, and chilled — a perfect refreshment.</p>
+                        <span>₹150</span>
+                    </div>
+
+                    <div class="menu-card">
+                        <img src="images/pngtree-taking-slice-picture-of-prepared-delicious-pizza-with.jpg"
+                            alt="pizza" />
+                        <h3>Pizza</h3>
+                        <p>Cheesy pizza with your favorite toppings baked to perfection.</p>
+                        <span>₹180</span>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-
 </body>
 
 </html>

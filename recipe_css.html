@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe_Book</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: url(images/background2.jpeg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: round;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .navbar {
+            width: 100vw;
+            height: 2.5rem;
+            background-color: rgb(43, 36, 36);
+            margin-bottom: 1.5rem;
+        }
+
+        .navlist {
+            padding: 0.2rem 2rem;
+            list-style: none;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navlist p {
+            font-size: 1.5rem;
+            color: rgb(246, 14, 14);
+            text-shadow: 0 0 8px rgb(163, 6, 6);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(246, 14, 14);
+            text-shadow: 0 0 8px rgb(163, 6, 6);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        a {
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #ffb703;
+            text-shadow: 0 0 6px #ffae00;
+        }
+
+        .items {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer {
+            height: 3rem;
+            background-color: rgb(63, 61, 61);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer p {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .outerContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 2rem;
+        }
+
+        .mainContainer {
+            width: 90%;
+            background: linear-gradient(90deg,
+                    rgba(237, 31, 41, 1) 0%,
+                    rgba(253, 29, 29, 1) 25%,
+                    rgba(242, 146, 12, 1) 100%);
+            margin: auto;
+            box-shadow: 3px 3px 10px black;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-radius: 2rem;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideUp 0.8s ease forwards;
+
+        }
+
+        .mainContainer:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mainContainer:hover {
+            transform: scale(1.02);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+            transition: 0.4s ease;
+        }
+
+        .right img {
+            transition: transform 0.4s ease;
+        }
+
+        .right img:hover {
+            transform: scale(1.05);
+        }
+
+        .left h2:hover {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            transition: 0.3s;
+        }
+
+        .item1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 3rem;
+            border-radius: 10%;
+        }
+
+        .right img {
+            height: 18rem;
+            width: 18rem;
+            border-radius: 2rem;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .left h2 {
+            color: rgb(255, 255, 255);
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .left h3 {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .left li {
+            margin: 5px;
+            font-size: 0.8rem;
+        }
+
+       /* ======= RESPONSIVE DESIGN ======= */
+
+/* Tablets & small laptops */
+@media (max-width: 992px) {
+  .item1 {
+    padding: 1.5rem 2rem;
+  }
+
+  .right img {
+    height: 15rem;
+    width: 15rem;
+  }
+}
+
+/* Mobile landscape & large phones */
+@media (max-width: 768px) {
+  .item1 {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .right img {
+    height: 14rem;
+    width: 14rem;
+  }
+
+  .left h2 {
+    font-size: 1.5rem;
+  }
+
+  .left h3 {
+    font-size: 1.2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .navbar {
+    height: auto;
+  }
+
+  .navlist {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .items {
+    gap: 1rem;
+  }
+
+  .mainContainer {
+    width: 95%;
+    border-radius: 1.2rem;
+  }
+
+  .item1 {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .right img {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  .left li,
+  .left ol li {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .left h2 {
+    font-size: 1.3rem;
+  }
+
+  .right img {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <nav>
+                    <ul class="navlist">
+                        <li>
+                            <p>Recipe_Book</p>
+                        </li>
+                        <li>
+                            <div class="items">
+                                <a href="#">Home</a>
+                                <a href="#">Contact</a>
+                                <a href="#">About</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="outerContainer">
+                <div class="mainContainer">
+                    <section>
+                        <div class="item1">
+                            <div class="left">
+                                <h2>Paneer Butter Masala</h2>
+                                <div>
+                                    <h3>Ingredients</h3>
+                                    <ul>
+                                        <li>Paneer cubes</li>
+                                        <li>Tomato puree</li>
+                                        <li>Butter & cream</li>
+                                        <li>Masala spices</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h3>Steps</h3>
+                                    <ol>
+                                        <li>Cook tomato puree with spices.</li>
+                                        <li>Add paneer & butter.</li>
+                                        <li>Add cream & serve.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="images/paneer_2.webp" alt="paneer butter masala" />
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="mainContainer">
+                    <section>
+                        <div class="item1">
+                            <div class="left">
+                                <h2>Jalebi</h2>
+                                <div>
+                                    <h3>Ingredients</h3>
+                                    <ul>
+                                        <li>1 cup maida</li>
+                                        <li>2 tbsp corn flour</li>
+                                        <li>1/2 cup curd</li>
+                                        <li>Sugar syrup</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h3>Steps</h3>
+                                    <ol>
+                                        <li>Mix maida, corn flour & curd.</li>
+                                        <li>Rest 1 hour.</li>
+                                        <li>Fry spirals.</li>
+                                        <li>Dip in sugar syrup.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="images/Jalebi-Rabri.jpg" alt="" />
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer">
+                <p>&copy; 2025 Shaik Nazia. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
