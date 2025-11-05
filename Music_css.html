@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music pay card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: linear-gradient(90deg, rgb(134, 74, 157) 0%, rgb(92, 171, 232) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pay_card {
+            width: 20rem;
+            height: 30rem;
+            background-color: rgb(143, 195, 241);
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.2rem;
+        }
+
+        .pay_card img {
+            width: 100%;
+            height: 30%;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+        }
+
+        h3 {
+            color: rgb(4, 4, 124);
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: black;
+            font-weight: 400;
+            font-size: 1rem;
+            padding: .3rem 1.2rem;
+        }
+
+        .payment {
+            background-color: rgb(34, 165, 208);
+            height: 3rem;
+            /* width: 16rem; */
+            display: flex;
+            flex-direction: row;
+            /* align-items: center; */
+            gap: 2rem;
+            border-radius: .5rem;
+
+        }
+
+        .left {
+            display: flex;
+            /* flex-direction: row; */
+            align-items: center;
+            text-align: left;
+            padding: .3rem .5rem;
+
+        }
+
+        .image img {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%
+        }
+
+        .plan {
+            text-align: center;
+            line-height: 1rem;
+
+        }
+
+        .right {
+            padding: .8rem .2rem;
+        }
+        .right a{
+            text-decoration: none;
+        }
+
+        .proceed {
+            background-color: #202649;
+            height: 2rem;
+            width: 16rem;
+            border-radius: .5rem;
+            color: whitesmoke;
+            /* padding-top: .3rem; */
+            font-weight: bolder;
+            font-size: 1rem;
+            box-shadow: 5px 3px 3px rgb(36, 35, 35);
+        }
+
+        .cancel a {
+            text-decoration: none;
+            color: rgb(8, 55, 115);
+            font-size: 1rem;
+            font-weight: 500;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pay_card">
+            <img src="images/music_background.jpg" alt="music">
+            <h3>Pay Summary</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi officiis voluptatibus commodi explicabo
+                ratione at. Lorem ipsum dolor sit amet.</p>
+            <div class="payment">
+                <div class="left">
+                    <div class="image">
+                        <img src="images/music.jpg" alt="logo">
+                    </div>
+                    <div class="plan">
+                        <span>Annual Plan</span>
+                        <p>$99.9/year</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="#">Change</a>
+                </div>
+            </div>
+            <button class="proceed">
+                <h4>Proceed Payment</h4>
+            </button>
+            <div class="cancel">
+                <a href="cancel">Cancel Order</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
